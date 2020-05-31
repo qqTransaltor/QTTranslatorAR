@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = "QTTranslatorAR"
-  spec.version      = "2.0.6"
+  spec.version      = "2.0.7"
   spec.summary      = "QTTranslatorAR framework."
   spec.description  = <<-DESC
 QTTranslator basic framework with AR.
                       DESC
-  spec.homepage     = "https://github.com/melody5417/QTTranslatorAR"
+  spec.homepage     = "https://github.com/qqTransaltor"
   spec.license      = { :type => 'MIT', :text => <<-LICENSE
 Copyright (c) 2018-2020 QTTranslator
 
@@ -31,6 +31,6 @@ THE SOFTWARE.
                       }
   spec.author       = { "melody5417" => "lengningshang@126.com" }
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/melody5417/QTTranslatorAR.git", :tag => "#{spec.version}"  }
+  spec.source       = { :git => "https://github.com/qqTransaltor/QTTranslatorAR.git", :tag => "#{spec.version}"  }
   spec.vendored_frameworks = "QTTranslator.framework", "QTTranslatorAR.framework"
 end
