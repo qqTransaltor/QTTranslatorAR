@@ -26,7 +26,7 @@
 
 - (void)setup {
     self.manager = [[QTARTranslateManager alloc] initWithController:self delegate:self];
-    [self.manager setLanguagePair:[[QTLanguagePair alloc] initWithSource:QTLangTypeZh target:QTLangTypeEn]];
+    [self.manager setLanguagePair:[[QTLanguagePair alloc] initWithSource:QTLangTypeZh target:QTLangTypeJp]];
     [self.manager configure];
 }
 
