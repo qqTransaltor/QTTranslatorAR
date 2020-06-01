@@ -1,5 +1,5 @@
 PODS:
-  - QTTranslatorAR (2.0.7)
+  - QTTranslatorAR (2.0.8)
 
 DEPENDENCIES:
   - QTTranslatorAR (~> 2.0.5)
@@ -9,7 +9,7 @@ SPEC REPOS:
     - QTTranslatorAR
 
 SPEC CHECKSUMS:
-  QTTranslatorAR: 0711b158493eab79079d2d837bad1d6bdd760800
+  QTTranslatorAR: aaa2c32a75753530976bb7bc1511e206f54bf288
 
 PODFILE CHECKSUM: fbb8c8f4567f0d15b8a66f24a811f2e900855f28
 

@@ -60,22 +60,39 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat stableAccelerameterLimit;
 
 /**
+ * AR翻译语言对设置
+ * configure之前必须设置
+ * resume之后可以更新
+ * source 翻译的源语言类型。具体种类见 QTLangType，通过 langAbbrFromType(QTLangType) 方法构造
+ * target 翻译的目标语言类型。具体种类见 QTLangType，通过 langAbbrFromType(QTLangType) 方法构造
+ * AR翻译支持中文到 （英、日、韩、西班牙、法、德、越、马来、意大利、葡萄牙）的互译
+ */
+@property (nonatomic, strong) QTLanguagePair *languagePair;
+
+/**
  * 初始化AR翻译引擎
  * @param controller 传入依赖的viewController用来展示
  */
 - (instancetype)initWithController:(UIViewController * _Nonnull )controller
                           delegate:(id<QTARTranslateManagerDelegate> _Nullable)delegate;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-property-synthesis"
+/**
+ * 废弃 请使用 configure 接口
+ */
+- (void)configureWithSource:(NSString *)source target:(NSString *)target NS_UNAVAILABLE;
+#pragma clang diagnostic pop
+
 /**
  * 配置AR翻译引擎
- * @param source 翻译的源语言类型。具体种类见 QTLangType，通过 langAbbrFromType(QTLangType) 方法构造
- * @param target 翻译的目标语言类型。具体种类见 QTLangType，通过 langAbbrFromType(QTLangType) 方法构造
- * AR翻译支持中文到 （英、日、韩、西班牙、法、德、越、马来、意大利、葡萄牙）的互译
+ * 调用此方法前，请确保 languagePair 参数已经设置
  */
-- (void)configureWithSource:(NSString *)source target:(NSString *)target;
+- (void)configure;
 
 /**
  * 获取当前视频帧
+ * 若AR引擎未开启，返回为nil
  */
 - (UIImage *)getCurrentFrame;
 
@@ -83,10 +100,12 @@ NS_ASSUME_NONNULL_BEGIN
  * 开始AR翻译引擎
  */
 - (void)resume;
+
 /**
  * 暂停AR翻译引擎
  */
 - (void)pause;
+
 /**
  * 释放AR翻译引擎
  */
